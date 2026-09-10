@@ -1,0 +1,48 @@
+Maven → WAR
+mvn clean package
+
+
+Dockerfile
+FROM tomcat:9.0
+COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
+CMD ["catalina.sh", "run"]
+
+
+Build image
+docker build -t oles-app:1.0 .
+docker images
+Run Tomcat
+docker pull tomcat:9.0
+
+docker run -d -p 7070:8080 --name tomcat-server tomcat:9.0
+
+docker ps
+
+Deploy WAR
+docker cp target/*.war tomcat-server:/usr/local/tomcat/webapps/
+
+Then:
+
+http://localhost:7070
+Ubuntu + Python
+docker pull ubuntu
+
+docker run -dit --name python-container ubuntu
+
+docker exec -it python-container bash
+
+apt update
+apt install python3 -y
+
+python3 --version
+
+echo 'print("Hello from Docker")' > test.py
+python3 test.py
+
+exit
+Docker Hub
+docker tag oles-app:1.0 YOUR_USERNAME/oles-app:1.0
+
+docker login
+
+docker push YOUR_USERNAME/oles-app:1.0
