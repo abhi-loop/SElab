@@ -1,0 +1,159 @@
+# Clone repository using SSH
+git clone git@github.com:username/MavenWebApp.git
+
+# Enter repository
+cd MavenWebApp
+
+# Check status
+git status
+
+# Check remote repository
+git remote -v
+
+# Create and switch to feature branch
+git switch -c feature/homepage
+
+# Verify current branch
+git branch
+
+# Create README
+touch README.md
+
+# Stage changes
+git add .
+
+# Commit changes
+git commit -m "Add homepage and README"
+
+# Get latest main changes without losing local commits
+git pull --rebase origin main
+
+# Rebase feature branch onto main
+git rebase main
+
+# Find commit hash
+git log --oneline
+
+# Undo a commit without deleting it from history
+git revert <commit-hash>
+
+# Remove file from Git tracking but keep it locally
+git rm --cached <filename>
+
+# Commit the correction
+git commit -m "Remove unwanted file from tracking"
+
+# Compare code between branches
+git diff main...feature/homepage
+
+# Commits in feature but not main
+git log main..feature/homepage
+
+# Commits in main but not feature
+git log feature/homepage..main
+
+# Switch to main
+git switch main
+
+# Merge feature branch into main
+git merge feature/homepage
+
+# Push main to GitHub
+git push origin main
+
+# Verify synchronization
+git status
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------
+normal commands
+
+
+
+
+# 1. Clone repository
+git clone <SSH-URL>
+
+# 2. Enter repository
+cd <repository-name>
+
+# 3. Check status
+git status
+
+# 4. Check remote GitHub repository
+git remote -v
+
+# 5. Create + switch to feature branch
+git switch -c feature/homepage
+
+# 6. Verify current branch
+git branch
+
+# 7. Create README / make changes
+touch README.md
+
+# 8. Stage changes
+git add .
+
+# 9. Commit changes
+git commit -m "Add homepage and README"
+
+# 10. Get latest main changes without losing local commits
+git pull --rebase origin main
+
+# 11. Rebase feature branch onto main
+git switch feature/homepage
+git rebase main
+
+# 12. IF you need to undo a previous commit:
+# First find the commit hash
+git log --oneline
+
+# Then revert using that hash
+git revert <commit-hash>
+
+# 13. Remove a file from Git tracking but KEEP it locally
+git rm --cached <filename>
+
+# Commit the correction
+git commit -m "Remove unwanted file from tracking"
+
+# 14. Compare code changes
+git diff main...feature/homepage
+
+# 15. Find commits in feature but not main
+git log main..feature/homepage
+
+# 16. Find commits in main but not feature
+git log feature/homepage..main
+
+# 17. Switch to main
+git switch main
+
+# 18. Merge feature into main
+git merge feature/homepage
+
+# 19. Push main to GitHub
+git push origin main
+
+# 20. Verify synchronization
+git status
+
+
+
+git pull --rebase origin master
+git rebase master
+git diff master...feature
+git log master..feature
+git log feature..master
+git switch master
+git merge feature
+git push origin master
